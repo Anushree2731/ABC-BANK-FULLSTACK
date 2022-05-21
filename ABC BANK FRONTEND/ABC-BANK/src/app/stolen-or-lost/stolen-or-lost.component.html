@@ -1,0 +1,49 @@
+<div class="stolenOrLostHolder">
+  <div class="container">
+    <h2 style="text-align: center">Report Lost/Stolen Debit Card</h2>
+    <form
+      class="form-horizontal"
+      #reportForm="ngForm"
+      (ngSubmit)="StolenOrLostDetails()" autocomplete="off"
+    >
+      <div class="form-group">
+        <label class="control-label col-sm-2 fontSizeOfAttr">Name:</label>
+        <label class="control-label col-sm-2 fontSizeOfAttr">{{ customerName }}</label>
+      </div>
+      <br />
+      <div class="form-group fontSizeOfAttr">
+        <label>*Account No:</label>
+        <select
+          name="accountNumber"
+          class="form-select form-select-lg mb-3"
+          aria-label=".form-select-lg example"
+        >
+          <option>{{ accNo }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 fontSizeOfAttr">Lost/Stolen on:</label>
+        <div class="col-sm-10">
+          <input
+            type="date"
+            class="form-control date"
+            name="stolenOrLostOn"
+            [(ngModel)]="stolenOrLostOn"
+          />
+        </div>
+      </div>
+
+      <br />
+      <button class="btn btn-primary" type="submit">Submit</button>&nbsp;
+      <button
+        routerLink="/makeservicerequest"
+        class="btn btn-warning"
+        type="reset"
+      >
+        Back
+      </button>
+    </form>
+  </div>
+  <br />
+</div>

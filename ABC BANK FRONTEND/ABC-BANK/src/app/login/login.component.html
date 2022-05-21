@@ -1,0 +1,71 @@
+<div>
+  <br />
+  <div class="container-fluid">
+    <h1 class="login-head" style="text-align: center">
+      Welcome to Customer Self Service System
+    </h1>
+
+    <div class="loginFormHolderMain">
+      <div class="loginFormHolder">
+        <form #loginForm="ngForm" (ngSubmit)="validateUser()" autocomplete="off">
+          <h3>Log In</h3>
+          <div class="form-group">
+            <label for="userName">User Name</label><br />
+            <input
+              type="text"
+              required
+              #username="ngModel"
+              [class.is-invalid]="username.invalid && username.touched"
+              pattern="[A-Za-z0-9\-_\.]{6,20}"
+              class="form-control"
+              name="username"
+              [(ngModel)]="credentials.username"
+              placeholder="Enter username"
+            />
+            <div
+              *ngIf="username.errors && (username.invalid || username.touched)"
+            >
+              <small
+                class="text-danger"
+                *ngIf="username.errors['required'] && username.touched"
+                >please Enter the username</small
+              >
+              <small class="text-danger" *ngIf="username.errors['pattern']"
+                >please Enter the correct username</small
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label><br />
+            <input
+              type="password"
+              required
+              #password="ngModel"
+              [class.is-invalid]="password.invalid && password.touched"
+              pattern="  ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$"
+              class="form-control"
+              name="password"
+              [(ngModel)]="credentials.password"
+              placeholder="Enter password"
+            />
+            <div
+              *ngIf="password.errors && (password.invalid || password.touched)"
+            >
+              <small
+                class="text-danger"
+                *ngIf="password.errors['required'] && password.touched"
+                >please Enter the password</small
+              >
+              <small class="text-danger" *ngIf="password.errors['pattern']"
+                >please Enter the correct password</small
+              >
+            </div>
+          </div>
+          <br />
+          <button class="btn btn-primary" type="submit">Submit</button>&nbsp;
+          <button class="btn btn-warning" type="reset">Clear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

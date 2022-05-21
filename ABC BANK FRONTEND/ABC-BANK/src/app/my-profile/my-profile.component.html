@@ -1,0 +1,80 @@
+
+<div>
+
+
+  <div class="container myProfileHolder">
+
+    <h2>My profile details</h2>
+    <hr>
+    <form class="form-horizontal"  #profileForm="ngForm" autocomplete="off">
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Name:</label>
+        <label class="control-label col-sm-2 profileFont">{{customer.customername}}</label>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">UserName:</label>
+        <label class="control-label col-sm-2 profileFont">{{customer.customername}}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">DOB:</label>
+        <label class="control-label col-sm-2 profileFont">{{customer.dateofbirth}}</label>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Phone No:</label>
+        <label class="control-label col-sm-2 profileFont">{{customer.phone}}</label>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Address*:</label>
+        <div class="col-sm-10">
+          <input type="text"  class="form-control" name="customer.address" [(ngModel)]="customer.address"  placeholder="Enter Address" >
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">City*:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="customer.city" [(ngModel)]="customer.city" value="{{customer.city}}" placeholder="Enter City">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Pin Code*:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="customer.pincode" [(ngModel)]="customer.pincode"  value="{{customer.pincode}}"  placeholder="Enter Pin">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Country*:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="customer.country" [(ngModel)]="customer.country" placeholder="Enter Country">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Pan No:</label>
+        <label class="control-label col-sm-2">{{customer.pancard}}</label>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2 profileFont">Email:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" value="{{customer.email}}" placeholder="Enter EMAIL">
+        </div>
+      </div>
+      <br/>
+
+      <div class="text-danger">{{errorMsg}}</div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" (click)="onUpdate()">Submit</button>&nbsp;
+          <button routerLink="/menu" type="submit" class="btn btn-primary">Back</button>
+        </div>
+      </div>
+    </form>
+  </div><br>
+</div>
+

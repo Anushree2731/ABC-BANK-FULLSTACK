@@ -1,0 +1,33 @@
+<div class="myAccountHolder">
+  <div class="container">
+    <h2>My Accounts</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Account Number</th>
+          <th scope="col">Account type</th>
+          <th scope="col">Account Balance</th>
+          <th scope="col">Average Balance</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ accNo }}</td>
+          <td>{{ acctype }}</td>
+          <td>{{ accbalance }}</td>
+          <td>{{ avgbalance }}</td>
+          <td>
+            <button routerLink="/accountstatement" class="btn btn-info">
+              Get Statement
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: center">
+      <button routerLink="/menu" class="btn btn-primary">Back</button>
+    </div>
+    <br /><br />
+  </div>
+</div>

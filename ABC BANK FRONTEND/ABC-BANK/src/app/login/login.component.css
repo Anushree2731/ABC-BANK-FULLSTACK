@@ -1,0 +1,21 @@
+.loginFormHolderMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+form{
+    width: 400px;
+    background-color: rgb(226, 231, 179);
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid rgb(118, 144, 230);
+}
+h3 {
+  text-align: center;
+  color: rgb(20, 140, 220);
+}
+label {
+  color: rgb(21, 69, 199);
+}

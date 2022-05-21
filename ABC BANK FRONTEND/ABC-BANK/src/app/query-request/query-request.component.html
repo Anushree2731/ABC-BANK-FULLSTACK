@@ -1,0 +1,33 @@
+<div class="queryRequstHolder">
+  <div class="container">
+    <h2 style="text-align: center">Enter Query Request</h2>
+    <form
+      class="form-horizontal"
+      #QueryForm="ngForm"
+      (ngSubmit)="QueryRequestDetails()" autocomplete="off"
+    >
+      <div class="form-group fontSizeOfAttr">
+        <label class="control-label col-sm-2 ">Name:</label>
+        <label class="control-label col-sm-2">{{ customerName }}</label>
+      </div>
+      <br />
+      <div class="form-group fontSizeOfAttr">
+        <label class="control-label col-sm-2">*Query:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            name="userquery"
+            [(ngModel)]="userquery"
+          />
+        </div>
+      </div>
+      <br />
+      <button class="btn btn-primary" type="submit">Submit</button>&nbsp;
+      <button routerLink="/menu" class="btn btn-warning" type="reset">
+        Back
+      </button>
+    </form>
+  </div>
+  <br />
+</div>

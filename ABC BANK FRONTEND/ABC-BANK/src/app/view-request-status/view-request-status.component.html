@@ -1,0 +1,85 @@
+<div class="viewRequestHolder">
+  <div class="container">
+    <h2 style="text-align: center">View Request Status</h2>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Name:</label>
+      <label class="control-label col-sm-2">{{ customerName }}</label>
+    </div>
+    <br />
+    <div class="form-group">
+      <label>Request type:</label>
+      <select
+        name="requestval"
+        class="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example"
+        [(ngModel)]="requestval"
+      >
+        <option value="">Select The Request</option>
+        <option value="1">Cheque Book Request</option>
+        <option value="2">Report Lost/Stolen Card</option>
+        <option value="3">Query Request</option>
+      </select>
+    </div>
+    <button class="btn btn-primary btn-block mb-4" (click)="onSearch()">
+      Submit
+    </button>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th scope="col">Request Date</th>
+          <th scope="col">Response Date</th>
+          <th scope="col">Response Message</th>
+          <th  scope="col">Response Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of array; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{a.requestdate }}</td>
+          <td>{{a.responsedate}}</td>
+          <td>{{a.responsemessage}}</td>
+          <td>{{a.responsestatus }}</td>
+          <td *ngIf="a.requestval == 1">
+            <button
+              routerLink="/chequebookrequest"
+              type="button"
+              class="btn btn-info"
+              (click)="fetchdetails(a.chequebookrequest_Id, a.requestid)"
+            >
+              View Cheque Book Request
+            </button>
+          </td>
+          <td *ngIf="a.requestval == 2">
+            <button
+              routerLink="/StolenOrLost"
+              type="button"
+              class="btn btn-info"
+              (click)="fetchdetails(a.stolenrequest_Id, a.requestid)"
+            >
+              View Lost/Stolen Card
+            </button>
+          </td>
+          <td *ngIf="a.requestval == 3">
+            <button
+              routerLink="/queryRequest  "
+              type="button"
+              class="btn btn-info"
+              (click)="fetchdetails(a.queryrequestid, a.requestid)"
+            >
+              View Query Request
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: center;">
+      <button routerLink="/menu" class="btn btn-warning" type="reset">
+        Back
+      </button>
+    </div>
+  </div>
+  <br />
+</div>

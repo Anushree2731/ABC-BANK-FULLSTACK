@@ -1,0 +1,69 @@
+<div class="chequeBookRequestHolder">
+  <div class="container">
+    <h2 style="text-align: center">Cheque Book Request</h2>
+    <form autocomplete="off"
+      class="form-horizontal"
+      #checkBookForm="ngForm"
+      (ngSubmit)="chequeBookDetails()"
+    >
+      <div class="form-group">
+        <label class="control-label col-sm-2 fontSizeOfAttr">Name:</label>
+        <label class="control-label col-sm-2 fontSizeOfAttr">{{ customerName }}</label>
+      </div>
+      <br />
+      <div class="form-group">
+        <label class="fontSizeOfAttr">*Account No:</label>
+        <select
+          name="accountNumber"
+          class="form-select form-select-lg mb-3 fontSizeOfAttr"
+          aria-label=".form-select-lg example"
+        >
+          <option>{{ accNo }}</option>
+        </select>
+      </div>
+
+      <div class="form-group fontSizeOfAttr" (change)="checkNoOfLeaves()">
+        <label>*No of Cheque Leaves</label>&nbsp;&nbsp;
+        <input
+          class="form-check-input"
+          [(ngModel)]="noofcheque"
+          type="radio"
+          name="noofcheque"
+          id="inlineRadio1"
+          value="20"
+        />
+        <label class="form-check-label fontSizeOfAttr" for="inlineRadio1">20</label>
+        &nbsp; &nbsp;
+        <input
+          class="form-check-input fontSizeOfAttr"
+          [(ngModel)]="noofcheque"
+          type="radio"
+          name="noofcheque"
+          id="inlineRadio2"
+          value="50"
+        />
+        <label class="form-check-label" for="inlineRadio2">50</label>
+        &nbsp; &nbsp;<input
+          class="form-check-input"
+          [(ngModel)]="noofcheque"
+          type="radio"
+          name="noofcheque"
+          id="inlineRadio3"
+          value="100"
+        />
+        <label class="form-check-label" for="inlineRadio3">100</label>
+      </div>
+      <br />
+      <br />
+      <button class="btn btn-primary" type="submit">Submit</button>&nbsp;
+      <button
+        routerLink="/makeservicerequest"
+        class="btn btn-warning"
+        type="reset"
+      >
+        Back
+      </button>
+    </form>
+  </div>
+  <br />
+</div>

@@ -1,0 +1,33 @@
+<div class="myAccountStatementHolder">
+  <div class="container">
+    <h2>Account Statement</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th scope="col">Account Number</th>
+          <th scope="col">Date</th>
+          <th scope="col">Description</th>
+          <th scope="col">Credit/Debit</th>
+          <th scope="col">transcationamount</th>
+          <th scope="col">Closing Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of array; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ accNo }}</td>
+          <td>{{ a.transcationDate }}</td>
+          <td>{{ a.description }}</td>
+          <td>{{ a.creditordebit }}</td>
+          <td>{{a.transcationamount}}</td>
+          <td>{{ a.closingBalance }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align: center">
+      <button routerLink="/account" class="btn btn-primary">Back</button>
+    </div>
+    <br />
+  </div>
+</div>
